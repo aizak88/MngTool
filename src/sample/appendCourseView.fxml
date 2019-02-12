@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.AppendCourseView">
+   <children>
+      <TextField fx:id="txtCourseName" layoutX="153.0" layoutY="56.0" prefHeight="25.0" prefWidth="436.0" />
+      <TextField fx:id="txtCoursePrice" layoutX="153.0" layoutY="97.0" prefHeight="25.0" prefWidth="436.0" />
+      <Label layoutX="38.0" layoutY="53.0" prefHeight="31.0" prefWidth="87.0" text="Название курса" />
+      <Label layoutX="55.0" layoutY="94.0" prefHeight="31.0" prefWidth="87.0" text="Цена" />
+      <Button fx:id="btnOk" layoutX="278.0" layoutY="181.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="145.0" text="OK" />
+      <Button fx:id="btnRefresh" layoutX="444.0" layoutY="181.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="145.0" text="Отмена" />
+      <TableView fx:id="tbCourses" layoutY="255.0" onMouseClicked="#onRowClicked" prefHeight="246.0" prefWidth="700.0">
+        <columns>
+          <TableColumn id="courseid" fx:id="clmnID" prefWidth="75.0" text="ИД" visible="false" />
+          <TableColumn fx:id="clmnName" prefWidth="392.0" text="Название курса" />
+            <TableColumn fx:id="clmnPrice" minWidth="0.0" prefWidth="133.0" text="Стоимость" />
+            <TableColumn fx:id="clmnActive" minWidth="0.0" prefWidth="173.0" text="Активен" />
+        </columns>
+      </TableView>
+      <CheckBox fx:id="checkActive" layoutX="153.0" layoutY="139.0" mnemonicParsing="false" text="Активен" />
+      <MenuBar layoutX="10.0" layoutY="14.0" prefHeight="25.0" prefWidth="669.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="Меню">
+            <items>
+              <MenuItem fx:id="barNew" mnemonicParsing="false" onAction="#onNewClicked" text="Создать" />
+                  <MenuItem fx:id="barEdit" mnemonicParsing="false" onAction="#onEditClicked" text="Редактировать" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </children>
+</AnchorPane>
